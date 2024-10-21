@@ -16,6 +16,14 @@ Um jogo divertido e interativo de Memória projetado para desafiar suas habilida
 ### Captura de Tela do Jogo
 ![Captura de Tela do Jogo](https://github.com/anndrehjr/JOGO-DA-MEMORIA/blob/main/2.png)
 
+## Demonstração
+
+Veja o jogo em ação no vídeo abaixo:
+
+[![Jogo da Memória - Vídeo de Demonstração](https://img.youtube.com/vi/<VIDEO_ID>/0.jpg)](https://github.com/anndrehjr/JOGO-DA-MEMORIA/blob/main/video.mp4)
+
+> *Nota: Clique na imagem para assistir ao vídeo.*
+
 ## Instalação
 
 Para executar este projeto localmente, siga os passos abaixo:
