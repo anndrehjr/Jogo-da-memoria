@@ -1,0 +1,166 @@
+/* Estilos do corpo */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    animation: changeBackground 10s infinite;
+}
+
+/* Animação de fundo */
+@keyframes changeBackground {
+    0%, 100% { background-color: #f0f0f0; }
+    25% { background-color: #ffcccc; }
+    50% { background-color: #ccffcc; }
+    75% { background-color: #ccccff; }
+}
+
+/* Estilo do título */
+.title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animação de fadeIn */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo do tabuleiro do jogo */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    gap: 10px;
+    background-image: url('images/image.png'); /* Imagem de fundo do tabuleiro */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Estilo das cartas */
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco translúcido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform-style: preserve-3d;
+    animation: changeColor 3s infinite; /* Animação de troca de cor */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card.flipped {
+    background-color: #a0d3e8;
+    border-color: #0d98ba;
+    cursor: not-allowed; /* Indica que não pode ser clicada */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: none;
+}
+
+.card.flipped img {
+    display: block;
+}
+
+/* Mensagem de feedback */
+#message {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 20px 0;
+}
+#final-image {
+    display: none;
+    margin-top: 20px;
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilo do player do Spotify */
+iframe {
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+iframe:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos do rodapé */
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Estilos para ícones sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+    transform: translateY(-5px);
+}
+
+/* Estilos específicos para cada ícone de rede social */
+.icon.facebook:hover { color: #3b5998; }
+.icon.twitter:hover { color: #1da1f2; }
+.icon.instagram:hover { color: #e1306c; }
+.icon.linkedin:hover { color: #0077b5; }
+
+/* Estilo do botão de reiniciar (exemplo) */
+#restartButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #0d98ba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restartButton:hover {
+    background-color: #0a7a95;
+}
