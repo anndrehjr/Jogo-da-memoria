@@ -1,4 +1,4 @@
-# Jogo da Memória
+# Jogo da Memória 🎮✨
 
 ![Jogo da Memória](https://github.com/anndrehjr/JOGO-DA-MEMORIA/blob/main/1.png)
 
@@ -6,10 +6,10 @@ Um jogo divertido e interativo de Memória projetado para desafiar suas habilida
 
 ## Funcionalidades
 
-- **Design Responsivo**: Jogue em qualquer dispositivo.
-- **Jogabilidade Animada**: Aproveite animações suaves ao virar as cartas.
-- **Compartilhamento Social**: Conecte-se com amigos através de ícones de redes sociais.
-- **Fácil de Usar**: Interface simples adequada para todas as idades.
+- **Design Responsivo**: Jogue em qualquer dispositivo. 📱💻
+- **Jogabilidade Animada**: Aproveite animações suaves ao virar as cartas. 🎉
+- **Compartilhamento Social**: Conecte-se com amigos através de ícones de redes sociais. 🌐
+- **Fácil de Usar**: Interface simples adequada para todas as idades. 👶👵
 
 ## Capturas de Tela
 
@@ -20,9 +20,13 @@ Um jogo divertido e interativo de Memória projetado para desafiar suas habilida
 
 Veja o jogo em ação no vídeo abaixo:
 
-[![Jogo da Memória - Vídeo de Demonstração](https://img.youtube.com/vi/<VIDEO_ID>/0.jpg)](https://github.com/anndrehjr/JOGO-DA-MEMORIA/blob/main/video.mp4)
+<div style="text-align: center;">
+  <a href="https://youtu.be/f8W_jZ4G3Ns" target="_blank">
+    <img src="https://img.youtube.com/vi/f8W_jZ4G3Ns/0.jpg" alt="Jogo da Memória - Vídeo de Demonstração">
+  </a>
+</div>
 
-> *Nota: Clique na imagem para assistir ao vídeo.*
+> *Nota: Clique na imagem para assistir ao vídeo.* 📽️
 
 ## Instalação
 
