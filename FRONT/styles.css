@@ -1,4 +1,3 @@
-/* Estilos do corpo */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f0f0;
@@ -8,10 +7,11 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    text-align: center;
+    overflow-y: auto;
     animation: changeBackground 10s infinite;
 }
 
-/* Animação de fundo */
 @keyframes changeBackground {
     0%, 100% { background-color: #f0f0f0; }
     25% { background-color: #ffcccc; }
@@ -19,39 +19,36 @@ body {
     75% { background-color: #ccccff; }
 }
 
-/* Estilo do título */
-.title {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Animação de fadeIn */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-50px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Estilo do tabuleiro do jogo */
 .game-board {
     display: grid;
-    grid-template-columns: repeat(5, 100px);
+    grid-template-columns: repeat(5, 50px);
     gap: 10px;
-    background-image: url('images/image.png'); /* Imagem de fundo do tabuleiro */
+    background-image: url('images/image.png');
     background-size: cover;
     background-position: center;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: 60vh;
+    justify-content: center;
+    margin-top: 20%;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
 }
 
-
-/* Estilo das cartas */
 .card {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco translúcido */
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +57,8 @@ body {
     border-radius: 8px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     transform-style: preserve-3d;
-    animation: changeColor 3s infinite; /* Animação de troca de cor */
+    animation: changeColor 3s infinite;
+    max-width: 100%;
 }
 
 .card:hover {
@@ -71,7 +69,7 @@ body {
 .card.flipped {
     background-color: #a0d3e8;
     border-color: #0d98ba;
-    cursor: not-allowed; /* Indica que não pode ser clicada */
+    cursor: not-allowed;
 }
 
 .card img {
@@ -85,35 +83,36 @@ body {
     display: block;
 }
 
-/* Mensagem de feedback */
 #message {
     font-size: 1.2rem;
     color: #555;
     margin: 20px 0;
+    text-align: center;
 }
+
 #final-image {
     display: none;
     margin-top: 20px;
     width: 300px;
     height: auto;
     border-radius: 10px;
+    text-align: center;
 }
 
-/* Estilo do player do Spotify */
 iframe {
     border-radius: 12px;
     margin-top: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     border: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    height: 380px;
 }
 
 iframe:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+   transform: scale(1.03);
 }
 
-/* Estilos do rodapé */
 footer {
     margin-top: 20px;
     text-align: center;
@@ -122,9 +121,9 @@ footer {
 footer p {
     font-size: 1.2rem;
     color: #333;
+    margin-bottom: 10px;
 }
 
-/* Estilos para ícones sociais */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -143,13 +142,11 @@ footer p {
     transform: translateY(-5px);
 }
 
-/* Estilos específicos para cada ícone de rede social */
 .icon.facebook:hover { color: #3b5998; }
 .icon.twitter:hover { color: #1da1f2; }
 .icon.instagram:hover { color: #e1306c; }
 .icon.linkedin:hover { color: #0077b5; }
 
-/* Estilo do botão de reiniciar (exemplo) */
 #restartButton {
     padding: 10px 20px;
     font-size: 1rem;
@@ -163,4 +160,147 @@ footer p {
 
 #restartButton:hover {
     background-color: #0a7a95;
+}
+
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    .game-board {
+        display: grid;
+        grid-template-columns: repeat(5, 100px);
+        gap: 10px;
+        background-image: url('images/image.png');
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: 100vh;
+        justify-content: center;
+        margin-top: 20%;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        animation: fadeIn 1s ease-out;
+    }
+
+    .card {
+        width: 90px;
+        height:90px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        transform-style: preserve-3d;
+        animation: changeColor 3s infinite;
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #message {
+        font-size: 1rem;
+    }
+
+    iframe {
+        width: 100%;
+        height: 250px;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-board {
+        display: grid;
+        grid-template-columns: repeat(5, 50px);
+        gap: 10px;
+        background-image: url('images/image.png');
+        background-size: cover;
+        background-position: center;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+        max-width: 100%;
+        height: 60vh;
+        justify-content: center;
+        margin-top: 20%;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        animation: fadeIn 1s ease-out;
+    }
+    
+    .card {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        transform-style: preserve-3d;
+        animation: changeColor 3s infinite;
+        max-width: 100%;
+    }
+    
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card.flipped {
+        background-color: #a0d3e8;
+        border-color: #0d98ba;
+        cursor: not-allowed;
+    }
+    
+    .card img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        display: none;
+    }
+    
+    .card.flipped img {
+        display: block;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    iframe {
+        height: 200px;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+    }
 }
