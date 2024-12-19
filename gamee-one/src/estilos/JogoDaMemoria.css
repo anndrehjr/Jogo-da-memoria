@@ -1,0 +1,104 @@
+body {
+  background-color: rosybrown;
+
+}
+.jogo-da-memoria {
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cartas por linha */
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.carta {
+  width: 120px;
+  height: 120px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carta:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carta img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.carta.virada {
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+
+.carta.combinada {
+  background-color: #8bc34a;
+  box-shadow: 0 4px 10px rgba(139, 195, 74, 0.3);
+}
+
+.carta.virada img {
+  opacity: 1;
+}
+
+.carta:not(.virada) img {
+  opacity: 0;
+}
+
+.carta.virada,
+.carta.combinada {
+  transition: transform 0.6s ease-in-out, background-color 0.3s ease;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.carta img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.carta.virada img {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .tabuleiro {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .carta {
+    width: 90px;
+    height: 90px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}

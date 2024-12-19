@@ -1,0 +1,70 @@
+.app nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centraliza os itens de navegação */
+  background-color: #333; /* Cor de fundo do menu */
+  border-radius: 20px; /* Arredonda os cantos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.app nav ul li {
+  display: inline-block;
+  margin-right: 25px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.app nav ul li:last-child {
+  margin-right: 0; /* Remove a margem direita do último item */
+}
+
+.app nav ul li a {
+  text-decoration: none;
+  color: #fff; /* Cor do texto */
+  font-size: 1.2rem; /* Tamanho da fonte */
+  font-weight: bold;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.app nav ul li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.app nav ul li:hover {
+  background-color: #007BFF; /* Cor de fundo ao passar o mouse */
+  transform: scale(1.1); /* Aumenta ligeiramente o item */
+}
+
+.app nav ul li a.active {
+  color: #ff9800; /* Cor para o item ativo */
+  text-decoration: underline;
+}
+
+/* Efeito de foco nos links */
+.app nav ul li a:focus {
+  outline: none;
+  background-color: #0056b3;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+/* Responsividade: Ajusta o menu para telas menores */
+@media (max-width: 768px) {
+  .app nav ul {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    margin-top: 20px;
+  }
+
+  .app nav ul li {
+    margin-bottom: 15px; /* Adiciona espaçamento entre os itens */
+  }
+
+  .app nav ul li a {
+    font-size: 1.4rem; /* Aumenta o tamanho da fonte em telas pequenas */
+  }
+}
