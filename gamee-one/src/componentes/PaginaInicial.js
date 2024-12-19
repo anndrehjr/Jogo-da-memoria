@@ -1,17 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-const PaginaInicial = () => {
+function PaginaInicial() {
   return (
-    <div className="pagina-inicial">
+    <motion.div 
+      className="pagina-inicial"
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h1>Bem-vindo à Plataforma de Jogos</h1>
-      <p>Escolha um jogo para começar:</p>
-      <ul>
-        <li><Link to="/jogo-da-memoria">Jogo da Memória</Link></li>
-      </ul>
-    </div>
+      <nav>
+        <Link to="/jogo-da-memoria" className="link-animado">
+          Jogo da Memória
+        </Link>
+      </nav>
+    </motion.div>
   );
 }
 
 export default PaginaInicial;
-

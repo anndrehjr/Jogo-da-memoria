@@ -1,70 +1,100 @@
-.app nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center; /* Centraliza os itens de navegação */
-  background-color: #333; /* Cor de fundo do menu */
-  border-radius: 20px; /* Arredonda os cantos */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+/* Aplicação geral */
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url('/public/image.png'); /* Imagem de fundo */
+  background-size:cover; /* Ajusta a imagem para cobrir toda a área */
+  color: white; /* Texto branco para contraste */
+  font-family: 'Arial', sans-serif;
+}
+body::before{
+   content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Branco semitransparente */
+  z-index: -1; /* Coloca a sobreposição atrás do conteúdo */
 }
 
-.app nav ul li {
-  display: inline-block;
-  margin-right: 25px;
-  padding: 10px 15px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+/* Estilo de navegação */
+nav {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra no texto */
 }
 
-.app nav ul li:last-child {
-  margin-right: 0; /* Remove a margem direita do último item */
-}
-
-.app nav ul li a {
+/* Estilo dos links da navegação */
+nav a {
+  color: #ffffff; /* Cor vibrante */
   text-decoration: none;
-  color: #fff; /* Cor do texto */
-  font-size: 1.2rem; /* Tamanho da fonte */
-  font-weight: bold;
-  display: block;
-  transition: color 0.3s ease;
-}
-
-.app nav ul li a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-.app nav ul li:hover {
-  background-color: #007BFF; /* Cor de fundo ao passar o mouse */
-  transform: scale(1.1); /* Aumenta ligeiramente o item */
-}
-
-.app nav ul li a.active {
-  color: #ff9800; /* Cor para o item ativo */
-  text-decoration: underline;
-}
-
-/* Efeito de foco nos links */
-.app nav ul li a:focus {
-  outline: none;
-  background-color: #0056b3;
-  padding: 8px 15px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
   border-radius: 5px;
+  background: linear-gradient(45deg, #ff0000, #ff6600, #ff0099, #9933ff); /* Gradiente colorido */
+  background-size: 300% 300%; /* Expande o gradiente para criar o efeito de animação */
+  transition: all 0.5s ease-in-out;
+  display: inline-block;
 }
 
-/* Responsividade: Ajusta o menu para telas menores */
-@media (max-width: 768px) {
-  .app nav ul {
-    flex-direction: column; /* Empilha os itens verticalmente */
-    margin-top: 20px;
-  }
+/* Efeito ao passar o mouse */
+nav a:hover {
+  background-position: 100% 100%; /* Animação do gradiente ao passar o mouse */
+  color: white;
+  transform: scale(1.1); /* Aumenta o tamanho do link */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Brilho ao passar o mouse */
+}
 
-  .app nav ul li {
-    margin-bottom: 15px; /* Adiciona espaçamento entre os itens */
-  }
+/* Títulos com efeito de texto animado */
+h1, h2, h3 {
+  font-size: 3rem;
+  text-align: center;
+  background: linear-gradient(45deg, #ff0099, #ff6600, #ff0099, #9933ff); /* Gradiente */
+  background-clip: text;
+  color: transparent; /* Texto transparente para mostrar o gradiente */
+  animation: textGlow 1.5s ease-in-out infinite alternate; /* Animação de brilho */
+  
+  /* Contorno de texto */
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),   /* Sombra mais forte para contorno */
+    -2px -2px 4px rgba(0, 0, 0, 0.5),  /* Sombra para contorno */
+    2px -2px 4px rgba(0, 0, 0, 0.5),   /* Sombra para contorno */
+    -2px 2px 4px rgba(0, 0, 0, 0.5);   /* Sombra para contorno */
+}
 
-  .app nav ul li a {
-    font-size: 1.4rem; /* Aumenta o tamanho da fonte em telas pequenas */
+/* Animação de brilho do texto */
+@keyframes textGlow {
+  0% {
+    text-shadow: 
+      0 0 10px #ff0099, 
+      0 0 20px #ff6600, 
+      0 0 30px #ff0099, 
+      0 0 40px #9933ff;
   }
+  100% {
+    text-shadow: 
+      0 0 20px #ff6600, 
+      0 0 30px #ff0099, 
+      0 0 40px #9933ff, 
+      0 0 50px #ff0099;
+  }
+}
+
+/* Animação para o link */
+.link-animado {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.link-animado:hover {
+  color: #3498db; /* Cor ao passar o mouse */
+  transform: scale(1.1); /* Aumenta o tamanho do link */
+}
+
+.link-animado:active {
+  transform: scale(1); /* Deixa o link no tamanho normal ao clicar */
 }
