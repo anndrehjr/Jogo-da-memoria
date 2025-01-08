@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quebra-Cabeça de 32 Peças</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #game-board {
+      width: 400px;
+      height: 200px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 2px;
+      position: relative;
+    }
+
+    .tile {
+      background-size: 400px 200px;
+      cursor: pointer;
+      border: 1px solid #fff;
+    }
+
+    .empty {
+      background: #f4f4f4;
+      cursor: default;
+    }
+
+    #message {
+      font-size: 18px;
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quebra-Cabeça</h1>
+  <div id="game-board"></div>
+  <button id="shuffle-btn">Embaralhar</button>
+  <p id="message"></p>
+  <script>
+    const board = document.getElementById("game-board");
+    const shuffleButton = document.getElementById("shuffle-btn");
+    const message = document.getElementById("message");
+    let tiles = [];
+    const gridSize = 8; // Número de colunas
+    const rows = 4; // Número de linhas
+    const totalTiles = gridSize * rows;
+    const imageUrl = "imagem.png";
+
+
+    // Função para criar o tabuleiro
+    function createBoard() {
+      tiles = [];
+      board.innerHTML = "";
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < gridSize; col++) {
+          const position = row * gridSize + col;
+          const tile = document.createElement("div");
+          tile.classList.add("tile");
+          tile.style.backgroundImage = `url(${imageUrl})`;
+          tile.style.backgroundPosition = `${-(col * 50)}px ${-(row * 50)}px`;
+          tile.dataset.position = position;
+          tiles.push(tile);
+        }
+      }
+
+      // Tornar a última peça vazia
+      const emptyTile = tiles.pop();
+      emptyTile.classList.add("empty");
+      emptyTile.style.backgroundImage = "none";
+      tiles.push(emptyTile);
+
+      renderBoard();
+    }
+
+    // Função para renderizar o tabuleiro
+    function renderBoard() {
+      board.innerHTML = "";
+      tiles.forEach(tile => board.appendChild(tile));
+    }
+
+    // Função para embaralhar as peças
+    function shuffleTiles() {
+      tiles = tiles.slice(0, -1).sort(() => Math.random() - 0.5);
+      tiles.push(document.querySelector(".empty")); // Adiciona a peça vazia no final
+      renderBoard();
+      message.textContent = ""; // Limpa a mensagem
+    }
+
+    // Função para verificar se o quebra-cabeça está resolvido
+    function checkVictory() {
+      for (let i = 0; i < tiles.length; i++) {
+        if (tiles[i].dataset.position != i) {
+          return false; // Se qualquer peça estiver fora do lugar, ainda não venceu
+        }
+      }
+      return true;
+    }
+
+    // Função para mover as peças
+    board.addEventListener("click", event => {
+      const tile = event.target;
+      const index = tiles.indexOf(tile);
+      const emptyIndex = tiles.findIndex(t => t.classList.contains("empty"));
+
+      const validMoves = [
+        emptyIndex - gridSize, // acima
+        emptyIndex + gridSize, // abaixo
+        emptyIndex - 1,        // esquerda
+        emptyIndex + 1,        // direita
+      ];
+
+      if (validMoves.includes(index) && Math.abs(index % gridSize - emptyIndex % gridSize) <= 1) {
+        [tiles[index], tiles[emptyIndex]] = [tiles[emptyIndex], tiles[index]];
+        renderBoard();
+
+        if (checkVictory()) {
+          message.textContent = "Parabéns! Você resolveu o quebra-cabeça!";
+        }
+      }
+    });
+
+    // Inicializar o jogo
+    shuffleButton.addEventListener("click", shuffleTiles);
+    createBoard();
+    shuffleTiles();
+  </script>
+</body>
+</html>
